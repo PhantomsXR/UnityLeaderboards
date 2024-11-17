@@ -72,11 +72,15 @@ namespace Unity.Services.Leaderboards
 
             switch (cloudEnvironment)
             {
-                case k_StagingEnvironment:
+                case k_StagingEnvironment:                    
+#if LOCATION_CHINA
+                    return "https://xgs-stg.phantomsxr.com";
+#else
                     return "https://leaderboards-stg.services.api.unity.com";
+#endif
                 default:
 #if LOCATION_CHINA
-                    return "http://xgs.phantomsxr.com";
+                    return "https://xgs.phantomsxr.com";
 #else
                     return "https://leaderboards.services.api.unity.com";
 #endif
