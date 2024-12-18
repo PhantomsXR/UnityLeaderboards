@@ -26,7 +26,7 @@ namespace Unity.Services.Leaderboards
         /// The default singleton instance to access the Leaderboards service.
         /// </summary>
         /// <exception cref="ServicesInitializationException">
-        /// This exception is thrown if the <code>UnityServices.InitializeAsync()</code>
+        /// This exception is thrown if the <c>UnityServices.InitializeAsync()</c>
         /// has not finished before accessing the singleton.
         /// </exception>
         public static ILeaderboardsService Instance
@@ -47,48 +47,73 @@ namespace Unity.Services.Leaderboards
         }
     }
 
+    /// <summary>Options when getting a range</summary>
     public class RangeOptions
     {
+        /// <summary>How many entries to obtain</summary>
         public int? RangeLimit { get; set; }
+        /// <summary>Whether to include metadata or not</summary>
         public bool? IncludeMetadata { get; set; }
     }
 
+    /// <inheritdoc/>
     public class GetPlayerRangeOptions : RangeOptions {}
+    /// <inheritdoc/>
     public class GetPlayerScoreOptions : IncludeMetadataOptions {}
+    /// <inheritdoc/>
     public class GetVersionPlayerRangeOptions : RangeOptions {}
 
+    /// <inheritdoc/>
     public class GetVersionPlayerScoreOptions : IncludeMetadataOptions {}
 
+    /// <summary>Pagination options</summary>
     public class PaginationOptions
     {
+        /// <summary>What index to start from </summary>
         public int? Offset { get; set; }
+        /// <summary>How many entries to obtain</summary>
         public int? Limit { get; set; }
+        /// <summary>Whether to include metadata</summary>
         public bool? IncludeMetadata { get; set; }
     }
 
+    /// <summary>Include metadata options</summary>
     public class IncludeMetadataOptions
     {
+        /// <summary>Whether to include metadata or not</summary>
         public bool? IncludeMetadata { get; set; }
     }
 
+    /// <inheritdoc/>
     public class GetScoresOptions : PaginationOptions {}
+    /// <inheritdoc/>
     public class GetScoresByTierOptions : PaginationOptions {}
+    /// <inheritdoc/>
     public class GetScoresByPlayerIdsOptions : IncludeMetadataOptions {}
+    /// <inheritdoc/>
     public class GetVersionScoresOptions : PaginationOptions {}
+    /// <inheritdoc/>
     public class GetVersionScoresByTierOptions : PaginationOptions {}
+    /// <inheritdoc/>
     public class GetVersionScoresByPlayerIdsOptions : IncludeMetadataOptions {}
 
+    /// <summary>Get Versions options</summary>
     public class GetVersionsOptions
     {
+        /// <summary>How many entries to obtain</summary>
         public int? Limit { get; set; }
     }
 
+    /// <summary>Add Player Score options </summary>
     public class AddPlayerScoreOptions
     {
+        /// <summary>Metadata to attach to the score</summary>
         public object Metadata { get; set; }
+        /// <summary>The version of the metadata</summary>
         public string VersionId { get; set; }
     }
 
+    /// <summary>Leaderboard Service interface</summary>
     public interface ILeaderboardsService
     {
         /// <summary>

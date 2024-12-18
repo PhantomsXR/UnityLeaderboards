@@ -25,6 +25,7 @@ namespace Unity.Services.Leaderboards.Exceptions
     [Preserve]
     public class LeaderboardsValidationException : LeaderboardsException
     {
+        /// <summary>List of validation error details</summary>
         [Preserve] public List<LeaderboardsValidationErrorDetail> Details { get; private set; }
 
         internal LeaderboardsValidationException(LeaderboardsExceptionReason reason, int errorCode, string message,
@@ -72,12 +73,15 @@ namespace Unity.Services.Leaderboards.Exceptions
             Messages = errorBody.Messages;
         }
 
+        /// <summary>The field in the data that caused the error</summary>
         [Preserve]
         public string Field { get; }
 
+        /// <summary>Messages that describe the errors in the given field.</summary>
         [Preserve]
         public List<string> Messages { get; }
 
+        /// <inheritdoc/>
         [Preserve]
         public override string ToString()
         {

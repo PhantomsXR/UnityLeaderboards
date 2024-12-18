@@ -14,6 +14,7 @@ using JsonConvert = Newtonsoft.Json.JsonConvert;
 
 namespace Unity.Services.Leaderboards.Editor.Authoring.Model
 {
+    [HelpURL("https://docs.unity3d.com/Packages/com.unity.services.leaderboards@2.1/manual/Authoring/leaderboard_configuration.html")]
     class LeaderboardConfigAsset : ScriptableObject, IPath
     {
         const string k_DefaultFileName = "leaderboard_config";

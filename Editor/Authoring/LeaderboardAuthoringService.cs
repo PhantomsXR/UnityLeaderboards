@@ -1,9 +1,8 @@
-using System;
 using System.Collections.ObjectModel;
 using Unity.Services.Core.Editor;
 using Unity.Services.Core.Editor.Environments;
+using Unity.Services.Core.Editor.OrganizationHandler;
 using UnityEditor;
-using UnityEngine;
 using Unity.Services.DeploymentApi.Editor;
 using Unity.Services.Leaderboards.Authoring.Client;
 using Unity.Services.Leaderboards.Authoring.Client.Apis.Default;
@@ -16,9 +15,11 @@ using Unity.Services.Leaderboards.Authoring.Core.Serialization;
 using Unity.Services.Leaderboards.Authoring.Core.Service;
 using Unity.Services.Leaderboards.Editor.Authoring.Analytics;
 using Unity.Services.Leaderboards.Editor.Authoring.Deployment;
+using Unity.Services.Leaderboards.Editor.Authoring.Logging;
 using Unity.Services.Leaderboards.Editor.Authoring.Model;
 using Unity.Services.Leaderboards.Editor.Authoring.Shared.Analytics;
 using static Unity.Services.Leaderboards.DependencyInversion.Factories;
+using ILogger = Unity.Services.Leaderboards.Editor.Authoring.Logging.ILogger;
 
 namespace Unity.Services.Leaderboards.Editor.Authoring
 {
@@ -35,6 +36,7 @@ namespace Unity.Services.Leaderboards.Editor.Authoring
         public override void Register(ServiceCollection collection)
         {
             collection.Register(Default<ICommonAnalytics, CommonAnalytics>);
+            collection.Register(Default<ILogger, Logger>);
 #if UNITY_2023_2_OR_NEWER
             collection.Register(Default<ICommonAnalyticProvider, CommonAnalyticProvider>);
 #endif
@@ -52,6 +54,9 @@ namespace Unity.Services.Leaderboards.Editor.Authoring
             collection.Register(Default<ILeaderboardsClient, LeaderboardsClient>);
             collection.Register(Default<IDefaultApiClient, DefaultApiClient>);
             collection.Register(_ => EnvironmentsApi.Instance);
+            collection.Register(_ => OrganizationProvider.Organization);
+            collection.Register(Default<OpenLeaderboardDashboardCommand>);
+            collection.Register(Default<ILeaderboardsDashboardUrlResolver, LeaderboardsDashboardUrlResolver>);
             collection.RegisterStartupSingleton(Default<DeploymentProvider, LeaderboardDeploymentProvider>);
         }
     }

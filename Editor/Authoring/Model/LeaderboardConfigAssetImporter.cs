@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Unity.Services.Leaderboards.Editor.Authoring.Model
 {
+    [HelpURL("https://docs.unity3d.com/Packages/com.unity.services.leaderboards@2.1/manual/Authoring/leaderboard_configuration.html")]
     [ScriptedImporter(1, LeaderboardAssetsExtensions.configExtension)]
     class LeaderboardConfigAssetImporter : ScriptedImporter
     {

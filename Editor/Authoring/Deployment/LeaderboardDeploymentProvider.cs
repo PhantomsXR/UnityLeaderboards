@@ -13,10 +13,12 @@ namespace Unity.Services.Leaderboards.Editor.Authoring.Deployment
 
         public LeaderboardDeploymentProvider(
             DeployCommand deployCommand,
+            OpenLeaderboardDashboardCommand openLeaderboardDashboardCommand,
             ObservableCollection<IDeploymentItem> deploymentItems)
             : base(deploymentItems)
         {
             DeployCommand = deployCommand;
+            Commands.Add(openLeaderboardDashboardCommand);
         }
     }
 }

@@ -5,6 +5,22 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.2.1] - 2024-11-26
+### Fixed
+- Fixed inspector loading for service assets, below Unity 6
+- Fixed button top open in dashboard
+
+## [2.2.0] - 2024-11-12
+
+### Changed
+- Updated Apple Privacy Manifest to include the use of gameplay data.
+
+### Added
+- View in Deployment Window button for `.lb` file, dependent on Deployment package version 1.4.0.
+
+### Fixed
+- Help URLs from Leaderboard assets to the relevant documentation
+
 ## [2.1.0] - 2024-06-10
 
 ### Added

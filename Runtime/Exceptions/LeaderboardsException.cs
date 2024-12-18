@@ -18,7 +18,7 @@ namespace Unity.Services.Leaderboards.Exceptions
     /// <item><term>LeaderboardNotTiered</term><description>A request that can only be made on a tiered leaderboard was made on a non-tiered leaderboard.</description></item>
     /// <item><term>Unauthorized</term><description>Player is not authorized to access this resource.</description></item>
     /// <item><term>LeaderboardNotFound</term><description>The leaderboard requested was not found.</description></item>
-    /// <item><term>EntryNotFound</term><description></description>The leaderboard entry requested was not found.</item>
+    /// <item><term>EntryNotFound</term><description>The leaderboard entry requested was not found.</description></item>
     /// <item><term>VersionNotFound</term><description>The leaderboard version requested was not found.</description></item>
     /// <item><term>BucketNotFound</term><description>The leaderboard bucket requested was not found.</description></item>
     /// <item><term>TierNotFound</term><description>The leaderboard tier requested was not found.</description></item>
@@ -31,24 +31,43 @@ namespace Unity.Services.Leaderboards.Exceptions
     [Preserve]
     public enum LeaderboardsExceptionReason
     {
+        /// <summary>An unknown error occurred.</summary>
         Unknown = 0,
+        /// <summary>No internet connection.</summary>
         NoInternetConnection,
+        /// <summary>Request did not include a Project Id.</summary>
         ProjectIdMissing,
+        /// <summary>Request did not include a Player Id</summary>
         PlayerIdMissing,
+        /// <summary>Access token is missing from the request.</summary>
         AccessTokenMissing,
+        /// <summary>Generic reason indicating an argument in the request was invalid, commonly used in <see cref="Unity.Services.Leaderboards.Exceptions.LeaderboardsValidationException">LeaderboardValidationException</see></summary>
         InvalidArgument,
+        /// <summary>A request that can only be made on a bucketed leaderboard was made on a non-bucketed leaderboard</summary>
         LeaderboardNotBucketed,
+        /// <summary>A request that can only be made on a non-bucketed leaderboard was made on a bucketed leaderboard</summary>
         LeaderboardBucketed,
+        /// <summary>A request that can only be made on a tiered leaderboard was made on a non-tiered leaderboard.</summary>
         LeaderboardNotTiered,
+        /// <summary>Player is not authorized to access this resource</summary>
         Unauthorized,
+        /// <summary>The leaderboard requested was not found</summary>
         LeaderboardNotFound,
+        /// <summary>The leaderboard entry requested was not found</summary>
         EntryNotFound,
+        /// <summary>The leaderboard version requested was not found</summary>
         VersionNotFound,
+        /// <summary>The leaderboard bucket requested was not found </summary>
         BucketNotFound,
+        /// <summary>The leaderboard tier requested was not found </summary>
         TierNotFound,
+        /// <summary>Generic reason indicating that one of the entities specified in the request was not found </summary>
         NotFound,
+        /// <summary>Rate limit has been exceeded, please wait and try again </summary>
         TooManyRequests,
+        /// <summary>Generic reason indicating there was an error communicating with the service </summary>
         ServiceUnavailable,
+        /// <summary>Request attempted to read from a bucketed leaderboard before the player submitted a score and was assigned a bucket. </summary>
         ScoreSubmissionRequired
     }
 

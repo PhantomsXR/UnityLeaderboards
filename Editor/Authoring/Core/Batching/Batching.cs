@@ -28,11 +28,15 @@ namespace Unity.Services.Leaderboards.Authoring.Core.Batching
 
             while (true)
             {
+                var allBatchesDone = false;
                 var chunk = new List<Task>();
                 for (int i = 0; i < batchSize; ++i)
                 {
                     if (!iterator.MoveNext())
+                    {
+                        allBatchesDone = true;
                         break;
+                    }
                     chunk.Add(iterator.Current);
                 }
 
@@ -42,7 +46,8 @@ namespace Unity.Services.Leaderboards.Authoring.Core.Batching
                 var innerExceptions = await ExecuteBatchAsync(chunk);
                 exceptions.AddRange(innerExceptions);
 
-                if (cancellationToken.IsCancellationRequested)
+                if (allBatchesDone
+                    || cancellationToken.IsCancellationRequested)
                     break;
 
                 await Task.Delay(TimeSpan.FromSeconds(secondsDelay), cancellationToken);

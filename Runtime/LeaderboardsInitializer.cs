@@ -51,17 +51,14 @@ namespace Unity.Services.Leaderboards
             var accessToken = registry.GetServiceComponent<IAccessToken>();
             var playerId = registry.GetServiceComponent<IPlayerId>();
 
-            IInternalLeaderboardsApiClient internalLeaderboardsApiClient = new InternalLeaderboardsApiClient(
-                new HttpClient(), accessToken,
+            IInternalLeaderboardsApiClient internalLeaderboardsApiClient = new InternalLeaderboardsApiClient(new HttpClient(), accessToken,
                 new Configuration(GetHost(projectConfiguration), null, null, null));
 
             IAuthentication authentication = new AuthenticationWrapper(playerId, accessToken);
 
-            ILeaderboardsApiClientInternal apiClient =
-                new LeaderboardsApiClientInternal(cloudProjectId, authentication, internalLeaderboardsApiClient);
+            ILeaderboardsApiClientInternal apiClient = new LeaderboardsApiClientInternal(cloudProjectId, authentication, internalLeaderboardsApiClient);
 
-            var service =
-                new LeaderboardsServiceInternal(apiClient, new LeaderboardsApiErrorHandler(new RateLimiter()));
+            var service = new LeaderboardsServiceInternal(apiClient, new LeaderboardsApiErrorHandler(new RateLimiter()));
             registry.RegisterService<ILeaderboardsService>(service);
             return service;
         }
