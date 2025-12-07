@@ -21,5 +21,10 @@ namespace Unity.Services.Leaderboards.Editor.Authoring.Model
             ctx.AddObjectToAsset("MainAsset", asset);
             ctx.SetMainObject(asset);
         }
+
+        public void OnValidate()
+        {
+            hideFlags = HideFlags.HideInInspector;
+        }
     }
 }

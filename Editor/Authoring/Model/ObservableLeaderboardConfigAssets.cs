@@ -3,10 +3,10 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using Unity.Services.DeploymentApi.Editor;
-using Unity.Services.Leaderboards.Assets;
+using Unity.Services.Leaderboards.Editor.Shared.Assets;
 using UnityEngine;
-
 using Unity.Services.Leaderboards.Authoring.Core.Serialization;
+
 
 namespace Unity.Services.Leaderboards.Editor.Authoring.Model
 {
@@ -22,7 +22,7 @@ namespace Unity.Services.Leaderboards.Editor.Authoring.Model
         public ObservableLeaderboardConfigAssets(ILeaderboardsSerializer serializer)
         {
             m_Serializer = serializer;
-            m_LeaderboardsAssets = new ObservableAssets<LeaderboardConfigAsset>();
+            m_LeaderboardsAssets = new ObservableAssets<LeaderboardConfigAsset>(new[] {LeaderboardAssetsExtensions.configExtension} );
 
             foreach (var asset in m_LeaderboardsAssets)
             {

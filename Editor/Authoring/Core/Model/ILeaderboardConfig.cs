@@ -12,7 +12,7 @@ namespace Unity.Services.Leaderboards.Authoring.Core.Model
 
         SortOrder SortOrder { get; set; }
         UpdateType UpdateType { get; set; }
-        Decimal BucketSize { get; set; }
+        int BucketSize { get; set; }
         ResetConfig ResetConfig { get; set; }
         TieringConfig TieringConfig { get; set; }
     }

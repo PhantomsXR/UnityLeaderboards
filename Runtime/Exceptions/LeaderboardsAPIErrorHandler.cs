@@ -134,6 +134,7 @@ namespace Unity.Services.Leaderboards.Exceptions
                 case 500:
                 case 502:
                 case 503:
+                case 504:
                     return LeaderboardsExceptionReason.ServiceUnavailable;
                 default:
                     return LeaderboardsExceptionReason.Unknown;
@@ -157,6 +158,7 @@ namespace Unity.Services.Leaderboards.Exceptions
                 case 500:
                 case 502:
                 case 503:
+                case 504:
                     return "Leaderboards service is currently unavailable. Please try again later.";
                 default:
                     return "An unknown error occurred in the Leaderboards SDK.";

@@ -190,7 +190,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardEntry>> AddLeaderboardPlayerScoreAsync(Unity.Services.Leaderboards.Internal.Leaderboards.AddLeaderboardPlayerScoreRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardEntry)   },{"204",  null },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardEntry)   },{"204",  null },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -219,7 +219,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardScores>> GetLeaderboardPlayerRangeAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardPlayerRangeRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardScores)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardScores)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -246,7 +246,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardEntry>> GetLeaderboardPlayerScoreAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardPlayerScoreRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardEntry)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardEntry)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -273,7 +273,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardScoresWithNotFoundPlayerIds>> GetLeaderboardScoresByPlayerIdsAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardScoresByPlayerIdsRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardScores)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardScores)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -300,7 +300,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardTierScoresPage>> GetLeaderboardScoresByTierAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardScoresByTierRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardTierScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardTierScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -327,7 +327,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardScoresPage>> GetLeaderboardScoresAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardScoresRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -354,7 +354,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardVersionEntry>> GetLeaderboardVersionPlayerScoreAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardVersionPlayerScoreRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionEntry)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionEntry)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -381,7 +381,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardVersionScoresPage>> GetLeaderboardVersionScoresAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardVersionScoresRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -408,7 +408,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardVersionScores>> GetLeaderboardVersionPlayerRangeAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardVersionPlayerRangeRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionScores)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionScores)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -435,7 +435,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardVersionTierScoresPage>> GetLeaderboardVersionScoresByTierAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardVersionScoresByTierRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionTierScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionTierScoresPage)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -462,7 +462,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardVersionScoresWithNotFoundPlayerIds>> GetLeaderboardVersionScoresByPlayerIdsAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardVersionScoresByPlayerIdsRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionScoresWithNotFoundPlayerIds)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersionScoresWithNotFoundPlayerIds)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);
@@ -489,7 +489,7 @@ namespace Unity.Services.Leaderboards.Internal.Apis.Leaderboards
         public async Task<Response<Models.LeaderboardVersions>> GetLeaderboardVersionsAsync(Unity.Services.Leaderboards.Internal.Leaderboards.GetLeaderboardVersionsRequest request,
             Configuration operationConfiguration = null)
         {
-            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersions)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   } };
+            var statusCodeToTypeMap = new Dictionary<string, System.Type>() { {"200", typeof(Models.LeaderboardVersions)   },{"400", typeof(GetLeaderboardScores400OneOf)   },{"401", typeof(Models.BasicErrorResponse)   },{"403", typeof(Models.BasicErrorResponse)   },{"404", typeof(Models.BasicErrorResponse)   },{"429", typeof(Models.BasicErrorResponse)   },{"500", typeof(Models.BasicErrorResponse)   },{"503", typeof(Models.BasicErrorResponse)   },{"504", typeof(Models.BasicErrorResponse)   } };
 
             // Merge the operation/request level configuration with the client level configuration.
             var finalConfiguration = Configuration.MergeConfigurations(operationConfiguration, Configuration);

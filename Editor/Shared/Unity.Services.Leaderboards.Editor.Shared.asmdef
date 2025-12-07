@@ -1,6 +1,6 @@
 {
     "name": "Unity.Services.Leaderboards.Editor.Shared",
-    "rootNamespace": "",
+    "rootNamespace": "Unity.Services.Leaderboards.Editor.Shared",
     "references": [
         "Unity.Services.Core.Environments.Editor",
         "Unity.Services.DeploymentApi",

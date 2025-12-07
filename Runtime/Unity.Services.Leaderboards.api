@@ -233,12 +233,13 @@ namespace Unity.Services.Leaderboards.Models
 
     [System.Runtime.Serialization.DataContract(Name = @"LeaderboardVersionEntry")] [UnityEngine.Scripting.Preserve] public class LeaderboardVersionEntry
     {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = false, Name = @"metadata")] [UnityEngine.Scripting.Preserve] public string Metadata { get; }
         [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"playerId")] [UnityEngine.Scripting.Preserve] public string PlayerId { get; }
         [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"playerName")] [UnityEngine.Scripting.Preserve] public string PlayerName { get; }
         [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"rank")] [UnityEngine.Scripting.Preserve] public int Rank { get; }
         [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"score")] [UnityEngine.Scripting.Preserve] public double Score { get; }
         [System.Runtime.Serialization.DataMember(EmitDefaultValue = false, Name = @"version")] [UnityEngine.Scripting.Preserve] public LeaderboardVersion Version { get; }
-        [UnityEngine.Scripting.Preserve] public LeaderboardVersionEntry(string playerId, string playerName, int rank, double score, LeaderboardVersion version = default(LeaderboardVersion)) {}
+        [UnityEngine.Scripting.Preserve] public LeaderboardVersionEntry(string playerId, string playerName, int rank, double score, LeaderboardVersion version = default(LeaderboardVersion), string metadata = default(string)) {}
     }
 
     [System.Runtime.Serialization.DataContract(Name = @"LeaderboardVersions")] [UnityEngine.Scripting.Preserve] public class LeaderboardVersions

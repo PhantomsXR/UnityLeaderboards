@@ -1,6 +1,6 @@
 // WARNING: Auto generated code. Modifications will be lost!
-// Original source 'com.unity.services.shared' @0.0.11.
-namespace Unity.Services.Leaderboards.Assets
+// Original source 'com.unity.services.shared' @0.0.12.
+namespace Unity.Services.Leaderboards.Editor.Shared.Assets
 {
     interface IPath
     {

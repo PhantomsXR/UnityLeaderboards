@@ -7,8 +7,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Unity.Services.Leaderboards.Internal.Http;
 
-
-
 namespace Unity.Services.Leaderboards.Internal.Models
 {
     /// <summary>
@@ -25,15 +23,29 @@ namespace Unity.Services.Leaderboards.Internal.Models
         /// <param name="playerName">playerName param</param>
         /// <param name="rank">rank param</param>
         /// <param name="score">score param</param>
-        /// <param name="version">version param</param>
+        /// <param name="version">version param. Optional; defaults to default</param>
         [Preserve]
-        public LeaderboardVersionEntry(string playerId, string playerName, int rank, double score, LeaderboardVersion version = default)
+        public LeaderboardVersionEntry(string playerId, string playerName, int rank, double score,
+            LeaderboardVersion version = default) : this(playerId, playerName, rank, score, version, null) { }
+
+        /// <summary>
+        /// Creates an instance of LeaderboardVersionEntry.
+        /// </summary>
+        /// <param name="playerId">playerId param</param>
+        /// <param name="playerName">playerName param</param>
+        /// <param name="rank">rank param</param>
+        /// <param name="score">score param</param>
+        /// <param name="version">version param</param>
+        /// <param name="metadata">metadata param</param>
+        [Preserve]
+        public LeaderboardVersionEntry(string playerId, string playerName, int rank, double score, LeaderboardVersion version, object metadata)
         {
             Version = version;
             PlayerId = playerId;
             PlayerName = playerName;
             Rank = rank;
             Score = score;
+            Metadata = metadata;
         }
 
         /// <summary>
@@ -72,57 +84,10 @@ namespace Unity.Services.Leaderboards.Internal.Models
         public double Score{ get; }
 
         /// <summary>
-        /// Formats a LeaderboardVersionEntry into a string of key-value pairs for use as a path parameter.
+        /// Parameter updatedTime of LeaderboardEntry
         /// </summary>
-        /// <returns>Returns a string representation of the key-value pairs.</returns>
-        internal string SerializeAsPathParam()
-        {
-            var serializedModel = "";
-
-            if (Version != null)
-            {
-                serializedModel += "version," + Version.ToString() + ",";
-            }
-            if (PlayerId != null)
-            {
-                serializedModel += "playerId," + PlayerId + ",";
-            }
-            if (PlayerName != null)
-            {
-                serializedModel += "playerName," + PlayerName + ",";
-            }
-            serializedModel += "rank," + Rank.ToString() + ",";
-            serializedModel += "score," + Score.ToString();
-            return serializedModel;
-        }
-
-        /// <summary>
-        /// Returns a LeaderboardVersionEntry as a dictionary of key-value pairs for use as a query parameter.
-        /// </summary>
-        /// <returns>Returns a dictionary of string key-value pairs.</returns>
-        internal Dictionary<string, string> GetAsQueryParam()
-        {
-            var dictionary = new Dictionary<string, string>();
-
-            if (PlayerId != null)
-            {
-                var playerIdStringValue = PlayerId.ToString();
-                dictionary.Add("playerId", playerIdStringValue);
-            }
-
-            if (PlayerName != null)
-            {
-                var playerNameStringValue = PlayerName.ToString();
-                dictionary.Add("playerName", playerNameStringValue);
-            }
-
-            var rankStringValue = Rank.ToString();
-            dictionary.Add("rank", rankStringValue);
-
-            var scoreStringValue = Score.ToString();
-            dictionary.Add("score", scoreStringValue);
-
-            return dictionary;
-        }
+        [Preserve]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public object Metadata { get; }
     }
 }

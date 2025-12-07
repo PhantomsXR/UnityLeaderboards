@@ -408,14 +408,16 @@ namespace Unity.Services.Leaderboards.Models
         /// <param name="rank">rank param</param>
         /// <param name="score">score param</param>
         /// <param name="version">version param</param>
+        /// <param name="metadata">metadata param</param>
         [Preserve]
-        public LeaderboardVersionEntry(string playerId, string playerName, int rank, double score, LeaderboardVersion version = default)
+        public LeaderboardVersionEntry(string playerId, string playerName, int rank, double score, LeaderboardVersion version = default, string metadata = null)
         {
             Version = version;
             PlayerId = playerId;
             PlayerName = playerName;
             Rank = rank;
             Score = score;
+            Metadata = metadata;
         }
 
         [Preserve]
@@ -426,6 +428,7 @@ namespace Unity.Services.Leaderboards.Models
             Rank = entry.Rank;
             Score = entry.Score;
             Version = new LeaderboardVersion(entry.Version);
+            Metadata = entry.Metadata == null ? null : JsonConvert.SerializeObject(entry.Metadata);
         }
 
         /// <summary>
@@ -462,6 +465,13 @@ namespace Unity.Services.Leaderboards.Models
         [Preserve]
         [DataMember(Name = "score", IsRequired = true, EmitDefaultValue = true)]
         public double Score { get; }
+
+        /// <summary>
+        /// Parameter metadata of LeaderboardVersionEntry
+        /// </summary>
+        [Preserve]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public string Metadata { get; }
     }
 
     /// <summary>

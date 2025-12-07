@@ -5,7 +5,7 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Unity.Services.DeploymentApi.Editor;
-using Unity.Services.Leaderboards.Assets;
+using Unity.Services.Leaderboards.Editor.Shared.Assets;
 using Unity.Services.Leaderboards.Authoring.Core.Model;
 using Unity.Services.Leaderboards.Editor.Authoring.Analytics;
 using UnityEditor;

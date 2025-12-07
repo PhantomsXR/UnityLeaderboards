@@ -14,5 +14,6 @@ namespace Unity.Services.Leaderboards.Authoring.Core.Service
         Task Create(ILeaderboardConfig leaderboardConfig, CancellationToken token);
         Task Delete(ILeaderboardConfig leaderboardConfig, CancellationToken token);
         Task<IReadOnlyList<ILeaderboardConfig>> List(CancellationToken token);
+        Task Reset(ILeaderboardConfig leaderboardConfig);
     }
 }

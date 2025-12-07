@@ -195,5 +195,15 @@ namespace Unity.Services.Leaderboards.Editor.Authoring.AdminApi
 
             return results;
         }
+
+        public async Task Reset(ILeaderboardConfig leaderboardConfig)
+        {
+            await UpdateToken();
+            var request = new ResetLeaderboardScoresRequest(
+                Guid.Parse(projectId),
+                Guid.Parse(environmentId),
+                leaderboardConfig.Id);
+            await m_Client.ResetLeaderboardScoresAsync(request);
+        }
     }
 }

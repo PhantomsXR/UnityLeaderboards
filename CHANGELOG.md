@@ -5,10 +5,37 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.3.3] - 2025-09-16
+### Fixed
+- Signing package
+- Fixed assets being loaded despite being of the incorrect type
+
+## [2.3.2] - 2025-08-12
+
+### Fixed
+- Compilation when incompatible version of Deployment package is installed
+
+## [2.3.1] - 2025-07-24
+
+### Added
+- Added support for 504 error codes.
+
+## [2.3.0] - 2025-05-07
+
+### Fixed
+- Included Metadata in Leaderboard Versioned Entry models
+- Internal representation of bucket size switched to integer from decimal
+
+### Added
+- Added a custom inspector for the configurations asset (`.lb` files)
+  - Unity 2022 and higher
+- Reset leaderboard command available from Deployment context menu and Leaderboard Inspector
+
 ## [2.2.1] - 2024-11-26
+
 ### Fixed
 - Fixed inspector loading for service assets, below Unity 6
-- Fixed button top open in dashboard
+- Fixed button to open in dashboard
 
 ## [2.2.0] - 2024-11-12
 

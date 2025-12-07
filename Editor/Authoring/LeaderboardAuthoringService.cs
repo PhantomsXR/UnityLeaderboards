@@ -14,10 +14,12 @@ using Unity.Services.Leaderboards.Authoring.Core.Deploy;
 using Unity.Services.Leaderboards.Authoring.Core.Serialization;
 using Unity.Services.Leaderboards.Authoring.Core.Service;
 using Unity.Services.Leaderboards.Editor.Authoring.Analytics;
+using Unity.Services.Leaderboards.Editor.Authoring.Commands;
 using Unity.Services.Leaderboards.Editor.Authoring.Deployment;
 using Unity.Services.Leaderboards.Editor.Authoring.Logging;
 using Unity.Services.Leaderboards.Editor.Authoring.Model;
 using Unity.Services.Leaderboards.Editor.Authoring.Shared.Analytics;
+using Unity.Services.Leaderboards.Editor.Shared.UI;
 using static Unity.Services.Leaderboards.DependencyInversion.Factories;
 using ILogger = Unity.Services.Leaderboards.Editor.Authoring.Logging.ILogger;
 
@@ -56,6 +58,8 @@ namespace Unity.Services.Leaderboards.Editor.Authoring
             collection.Register(_ => EnvironmentsApi.Instance);
             collection.Register(_ => OrganizationProvider.Organization);
             collection.Register(Default<OpenLeaderboardDashboardCommand>);
+            collection.Register(Default<IDisplayDialog, DisplayDialog>);
+            collection.Register(Default<ResetLeaderboardCommand>);
             collection.Register(Default<ILeaderboardsDashboardUrlResolver, LeaderboardsDashboardUrlResolver>);
             collection.RegisterStartupSingleton(Default<DeploymentProvider, LeaderboardDeploymentProvider>);
         }

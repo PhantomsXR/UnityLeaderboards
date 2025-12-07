@@ -35,7 +35,7 @@ namespace Unity.Services.Leaderboards.Editor.Authoring.Deployment
 
         string GetBaseUrl()
         {
-            var projectId = CloudProjectSettings.projectId;;
+            var projectId = CloudProjectSettings.projectId;
             var envId = m_EnvironmentsApi.ActiveEnvironmentId;
             var orgId = m_OrganizationHandler.Key;
             return $"https://cloud.unity.com/home/organizations/{orgId}/projects/{projectId}/environments/{envId}";

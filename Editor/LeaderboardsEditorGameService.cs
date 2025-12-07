@@ -29,7 +29,7 @@ namespace Unity.Services.Leaderboards.Settings
         public string GetFormattedDashboardUrl()
         {
             return
-                $"https://dashboard.unity3d.com/organizations/{OrganizationProvider.Organization.Key}/projects/{CloudProjectSettings.projectId}/leaderboards/about";
+                $"https://cloud.unity3d.com/organizations/{OrganizationProvider.Organization.Key}/projects/{CloudProjectSettings.projectId}/leaderboards/about";
         }
     }
 }

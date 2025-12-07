@@ -1,8 +1,8 @@
 // WARNING: Auto generated code. Modifications will be lost!
-// Original source 'com.unity.services.shared' @0.0.11.
+// Original source 'com.unity.services.shared' @0.0.12.
 using System;
 
-namespace Unity.Services.Leaderboards.Assets
+namespace Unity.Services.Leaderboards.Editor.Shared.Assets
 {
     record PostProcessEventArgs
     {

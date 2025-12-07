@@ -46,6 +46,23 @@ namespace Unity.Services.Leaderboards.Editor.Authoring.Shared.UI.DeploymentConfi
             m_CommonAnalyticsSender = analyticsSender;
         }
 
+        public void BindCommand(Command command, IDeploymentItem item, ICommonAnalytics.CommonEventPayload analyticsEvent)
+        {
+            var container = this.Q<VisualElement>("deployment-container");
+            var entry = new VisualElement();
+            entry.AddToClassList("deployment-content-container");
+            var button = new Button(async () =>
+            {
+                await command.ExecuteAsync(new[] { item });
+                m_CommonAnalyticsSender.Send(analyticsEvent);
+            });
+            button.text = command.Name;
+            button.SetEnabled(command.IsEnabled(new []{item}));
+            button.visible = command.IsVisible(new[] { item });
+            entry.Add(button);
+            container.Add(entry);
+        }
+
         void SetupFooterVisual([CallerFilePath] string sourceFilePath = "")
         {
             var basePath = GetBasePath(sourceFilePath);

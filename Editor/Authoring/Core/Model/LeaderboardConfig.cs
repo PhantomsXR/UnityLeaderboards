@@ -37,14 +37,14 @@ namespace Unity.Services.Leaderboards.Authoring.Core.Model
         }
 
         public string Type => ConfigType;
-        [DataMember(IsRequired=true)]
+        [DataMember(IsRequired = true)]
         public SortOrder SortOrder { get; set; }
-        [DataMember(IsRequired=true)]
+        [DataMember(IsRequired = true)]
         public UpdateType UpdateType { get; set; }
         [DataMember]
         public string Id { get; set; }
         [DataMember]
-        public decimal BucketSize { get; set; }
+        public int BucketSize { get; set; }
         [DataMember]
         public ResetConfig ResetConfig { get; set; }
         [DataMember]
